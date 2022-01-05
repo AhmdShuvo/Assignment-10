@@ -5,7 +5,7 @@ import UseSignUp from '../../../Hooks/UseSignUp';
 import { AuthContext } from '../../AuthContext/AuthProvider';
 
 const SignIn = () => {
-    const {error, handleRegistration, handleName, handleEmail, handlePassword, toggleHandle, isLogin } = UseSignUp();
+    const {error, handleRegistration, handleName, handleEmail, handlePassword, toggleHandle, isLogin ,setlaoding} = UseSignUp();
 
     const {googleSignIn}=useContext(AuthContext);
     const history = useHistory()
@@ -15,6 +15,7 @@ const SignIn = () => {
   // Google Sign In OPtion //
   const handleGoogleLogin=()=>{
     googleSignIn().then(result=>{
+        setlaoding(true)
 
     });
 
